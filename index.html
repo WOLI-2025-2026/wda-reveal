@@ -2,77 +2,323 @@
 <html lang="pl">
 <head>
   <meta charset="utf-8" />
-  <title>Moja Prezentacja — Reveal.js</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Zajęcia WDA — BHP, ocenianie, algorytmy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Reveal.js CSS z CDN -->
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/reveal.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/theme/black.css" id="reveal-theme">
-
-  <!-- Podświetlanie składni -->
+  <!-- Highlight.js dla kodu -->
   <link rel="stylesheet" href="https://unpkg.com/highlight.js@11.9.0/styles/github.min.css">
 
-  <!-- Twój własny motyw (nadpisuje wybrane style) -->
-  <link rel="stylesheet" href="css/theme.css">
+  <style>
+    /* Delikatny motyw własny (możesz przenieść do css/theme.css) */
+    :root{
+      --r-main-font: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", "Helvetica Neue", sans-serif;
+      --r-heading-font: var(--r-main-font);
+      --r-main-color: #eaeaea;
+      --r-background-color: #0b0b0c;
+      --r-link-color: #6bdcff;
+      --r-link-color-hover: #b3ecff;
+      --r-selection-background-color: #4a90e2;
+    }
+    .reveal .slides{ font-size:30px }
+    .badge{ display:inline-block; padding:.15em .5em; border-radius:.6em; background:#1e293b; font-size:.6em; vertical-align:middle }
+    .ok{ color:#abf7b1 }
+    .warn{ color:#ffd37a }
+    .danger{ color:#ff9a9a }
+    .grid-cols{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.2rem }
+    .muted{ opacity:.8 }
+    .box{ background:rgba(255,255,255,.04); padding:1rem 1.2rem; border-radius:12px; }
+    svg.flow{ max-width:100%; height:auto }
+    .small{ font-size:.8em }
+  </style>
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
-      <!-- PRZYKŁADOWE SLAJDY W HTML -->
-      <section data-background-gradient="linear-gradient(135deg, #111 0%, #333 100%)">
-        <h1>Moja Prezentacja</h1>
-        <p style="opacity:.8">Reveal.js + GitHub Pages</p>
-        <p class="fragment">Klikaj strzałkami ← →, w dół dla „podslajdów”.</p>
-        <aside class="notes">
-          Notatki prelegenta — widoczne w trybie „S” (speaker notes).
-        </aside>
+
+      <!-- TYTUŁ -->
+      <section data-background-gradient="linear-gradient(135deg,#0b0b0c 0%,#1b1c1e 100%)">
+        <h1>WDA — start zajęć</h1>
+        <p class="muted">BHP na sali, zasady oceniania, wprowadzenie do algorytmów</p>
+        <p><span class="badge">Semestr</span> <span class="badge">WDA</span></p>
+        <aside class="notes">Skrót: BHP → ocenianie → podstawy algorytmów → flowchart.</aside>
+      </section>
+
+      <!-- ZASADY BHP -->
+      <section>
+        <h2>Zasady BHP w czasie zajęć</h2>
+        <div class="grid-cols">
+          <div class="box">
+            <h3>Sala komputerowa</h3>
+            <ul>
+              <li>Pracujemy <strong>na wyznaczonych stanowiskach</strong>.</li>
+              <li>Utrzymujemy porządek przy stanowisku.</li>
+              <li>Przewody zasilające <span class="warn">nie mogą</span> leżeć na przejściach.</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Jedzenie i picie</h3>
+            <ul>
+              <li><strong>Poza stanowiskami roboczymi</strong> – napoje i jedzenie zostawiamy w wyznaczonym miejscu.</li>
+              <li>Nic płynnego przy klawiaturze/komputerze.</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Wyjścia do toalety</h3>
+            <ul>
+              <li><strong>Informujemy</strong> prowadzącego, że wychodzimy – <em>nie pytamy</em> (krótki komunikat wystarczy).</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Elektryka</h3>
+            <ul>
+              <li>Uważamy przy <strong>podłączaniu/odłączaniu</strong> urządzeń – grozi porażeniem.</li>
+              <li>W razie porażenia <span class="danger">nie dotykamy</span> osoby gołymi rękami – używamy <strong>izolatora</strong> (np. drewniany kij, plastik).</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section>
-        <h2>Agenda</h2>
+        <h2>BHP: sytuacje awaryjne</h2>
+        <ul>
+          <li>Pożar/dym/awaria: <strong>najpierw</strong> odłączamy zasilanie <span class="muted">(o ile to bezpieczne)</span>, <strong>alarmujemy</strong> grupę i prowadzącego.</li>
+          <li>Złe samopoczucie, nagłe problemy: <strong>niezwłocznie informujemy</strong> prowadzącego.</li>
+        </ul>
+      </section>
+
+      <!-- ZASADY OCENIANIA -->
+      <section>
+        <h2>Zasady oceniania</h2>
+        <ul>
+          <li><strong>2 sprawdziany</strong> z części WDA.</li>
+          <li>Możliwe <strong>kartkówki / wejściówki</strong>.</li>
+          <li><strong>Aktywność</strong> na zajęciach wpływa na ocenę.</li>
+        </ul>
+      </section>
+
+      <!-- WPROWADZENIE DO ALGORYTMÓW -->
+      <section>
+        <h2>Wprowadzenie do algorytmów</h2>
         <ol>
-          <li class="fragment">Cel</li>
-          <li class="fragment">Dane / demo</li>
-          <li class="fragment">Wnioski</li>
+          <li>Definicje.</li>
+          <li>Metody reprezentacji algorytmów.</li>
+          <li>Złożoność obliczeniowa i pamięciowa.</li>
+          <li>Realizacja w języku C++.</li>
         </ol>
       </section>
 
-      <!-- PRZYKŁAD PODSLAJDÓW (VERTICAL STACK) -->
+      <!-- DEFINICJA ALGORYTMU -->
       <section>
-        <section>
-          <h2>Blok tematyczny</h2>
-          <p>To jest slajd poziomy.</p>
-        </section>
-        <section>
-          <h3>Podslajd</h3>
-          <pre><code class="language-js">
-// kod z podświetlaniem
-function hello(name) { return `Cześć, ${name}!`; }
-console.log(hello("Świecie"));
-          </code></pre>
-        </section>
+        <h2>Definicja: algorytm</h2>
+        <p>
+          <strong>Algorytm</strong> to <em>dobrze zdefiniowana, skończona procedura</em>, która dla danych wejściowych w
+          <em>ograniczonej liczbie kroków</em> wytwarza wynik/rozwiązanie problemu.
+        </p>
+        <p class="small muted">Źródło (przykładowe): encyklopedyczna definicja Britannica; por. ujęcie CLRS.</p>
       </section>
 
-      <!-- SLAJD Z TŁEM -->
-      <section data-background-image="media/obrazek.png" data-background-opacity="0.2">
-        <h2>Slajd z tłem</h2>
-        <p>Dowolny obraz w /media.</p>
+      <!-- REPREZENTACJE ALGORYTMÓW -->
+      <section>
+        <h2>Metody reprezentacji algorytmów</h2>
+        <div class="grid-cols">
+          <div class="box">
+            <h3>1) Lista kroków</h3>
+            <p>Prosty opis w języku naturalnym, numerowane kroki.</p>
+          </div>
+          <div class="box">
+            <h3>2) Schemat blokowy</h3>
+            <p>Diagram bloków i przepływu sterowania (strzałki).</p>
+          </div>
+          <div class="box">
+            <h3>3) Pseudokod</h3>
+            <p>Uproszczony zapis „jak kod”, bez składni konkretnego języka.</p>
+          </div>
+          <div class="box">
+            <h3>4) Kod źródłowy</h3>
+            <p>Implementacja w języku programowania (np. C++).</p>
+          </div>
+        </div>
       </section>
 
-      <!-- SLAJDY Z MARKDOWN (opcjonalnie) -->
-      <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-charset="utf-8">
-<textarea data-template>
-# Slajdy w Markdown
+      <!-- SCHEMATY BLOKOWE: BLOKI -->
+      <section>
+        <h2>Schematy blokowe — podstawowe bloki</h2>
+        <div class="grid-cols">
+          <div class="box">
+            <ul>
+              <li><strong>Start/Stop</strong> — owal.</li>
+              <li><strong>Wejście/Wyjście</strong> — równoległobok.</li>
+              <li><strong>Przetwarzanie</strong> — prostokąt.</li>
+              <li><strong>Decyzja</strong> — romb (tak/nie).</li>
+            </ul>
+          </div>
+          <div class="box">
+            <ul>
+              <li><strong>Łącznik</strong> — mały kółko/znacznik.</li>
+              <li><strong>Proces wstępnie zdef.</strong> — podproces (dwustronny pasek).</li>
+              <li><strong>Dokument</strong> — wygięty prostokąt.</li>
+              <li><strong>Strzałki</strong> — kierunek przepływu.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-- Edytuj szybciej treść
-- Nagłówki `#` → nowe slajdy
-- Fragmenty: <!-- .element: class="fragment" -->
+      <!-- SCHEMATY BLOKOWE: PRZYKŁAD ZADANIA (SVG) -->
+      <section>
+        <h2>Przykład: parzystość liczby</h2>
+        <div class="grid-cols">
+          <div class="box">
+            <h3>Lista kroków</h3>
+            <ol>
+              <li>Wczytaj liczbę <code>n</code>.</li>
+              <li>Jeśli <code>n % 2 == 0</code> → wypisz „parzysta”.</li>
+              <li>W przeciwnym razie wypisz „nieparzysta”.</li>
+              <li>Zakończ.</li>
+            </ol>
+          </div>
+          <div class="box">
+            <h3>Schemat blokowy</h3>
+            <!-- Prosty, responsywny schemat w SVG -->
+            <svg class="flow" viewBox="0 0 820 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schemat blokowy: sprawdzanie parzystości">
+              <defs>
+                <style>
+                  .blk{ fill:#121317; stroke:#5f6b7a; stroke-width:2; rx:16; ry:16 }
+                  .txt{ fill:#eaeaea; font-family: Inter, Arial, sans-serif; font-size:20px }
+                  .edge{ stroke:#8aa3bf; stroke-width:2; fill:none; marker-end:url(#arr) }
+                  .par{ font-weight:700; fill:#abf7b1 }
+                  .nie{ font-weight:700; fill:#ffb3b3 }
+                </style>
+                <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#8aa3bf"/>
+                </marker>
+              </defs>
+              <!-- Start -->
+              <ellipse cx="410" cy="50" rx="90" ry="30" stroke="#5f6b7a" stroke-width="2" fill="#121317"/>
+              <text x="410" y="55" text-anchor="middle" class="txt">Start</text>
 
---
+              <!-- Wejście -->
+              <polygon points="300,120 520,120 560,160 260,160" stroke="#5f6b7a" stroke-width="2" fill="#121317"/>
+              <text x="410" y="148" text-anchor="middle" class="txt">Wczytaj n</text>
 
-## Podslajd w Markdown
+              <!-- Decyzja -->
+              <polygon points="410,200 540,260 410,320 280,260" stroke="#5f6b7a" stroke-width="2" fill="#121317"/>
+              <text x="410" y="265" text-anchor="middle" class="txt">n % 2 == 0?</text>
 
-Kod:
+              <!-- Przetwarzanie / wyjścia -->
+              <rect x="90" y="380" width="260" height="60" class="blk"/>
+              <text x="220" y="415" text-anchor="middle" class="txt par">Wypisz: parzysta</text>
 
-```bash
-echo "Hello Reveal"
+              <rect x="470" y="380" width="260" height="60" class="blk"/>
+              <text x="600" y="415" text-anchor="middle" class="txt nie">Wypisz: nieparzysta</text>
+
+              <!-- Stop -->
+              <ellipse cx="410" cy="490" rx="90" ry="30" stroke="#5f6b7a" stroke-width="2" fill="#121317"/>
+              <text x="410" y="495" text-anchor="middle" class="txt">Stop</text>
+
+              <!-- Krawędzie -->
+              <path d="M410,80 L410,120" class="edge"/>
+              <path d="M410,160 L410,200" class="edge"/>
+              <path d="M280,260 C240,260 220,300 220,380" class="edge"/>
+              <path d="M540,260 C580,260 600,300 600,380" class="edge"/>
+              <path d="M220,440 C220,470 320,490 410,490" class="edge"/>
+              <path d="M600,440 C600,470 500,490 410,490" class="edge"/>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- ZŁOŻONOŚĆ -->
+      <section>
+        <h2>Złożoność algorytmów</h2>
+        <div class="grid-cols">
+          <div class="box">
+            <h3>Czas (Big‑O)</h3>
+            <ul>
+              <li><code>O(1)</code> — stały.</li>
+              <li><code>O(log n)</code> — logarytmiczny.</li>
+              <li><code>O(n)</code> — liniowy.</li>
+              <li><code>O(n log n)</code> — np. sortowania szybkie/merge.</li>
+              <li><code>O(n²)</code>, <code>O(2^n)</code> — kosztowne.</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h3>Pamięć</h3>
+            <ul>
+              <li>Dodatkowa pamięć (np. tablice pomocnicze).</li>
+              <li>Rekurencja → stos wywołań.</li>
+              <li>W praktyce: kompromis czas ⟷ pamięć.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- REALIZACJA W C++ -->
+      <section>
+        <h2>Realizacja w języku C++</h2>
+        <pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+  long long n; cout &lt;&lt; "Podaj n: ";
+  if(!(cin &gt;&gt; n)) return 0;
+  if(n % 2 == 0) cout &lt;&lt; "parzysta\n";
+  else           cout &lt;&lt; "nieparzysta\n";
+  return 0;
+}
+</code></pre>
+        <p class="small muted">Porównaj: lista kroków → schemat → pseudokod → kod.</p>
+      </section>
+
+      <!-- ZADANIA / NARZĘDZIA -->
+      <section>
+        <h2>Zadania: schematy blokowe</h2>
+        <ul>
+          <li>Rysuj online w: <a href="https://app.diagrams.net/" target="_blank" rel="noreferrer noopener">app.diagrams.net</a>.</li>
+          <li>Przykłady do wykonania:
+            <ol>
+              <li>Suma liczb od 1 do <code>n</code>.</li>
+              <li>Maksimum z dwóch liczb.</li>
+              <li>Sprawdzenie, czy liczba jest pierwsza.</li>
+            </ol>
+          </li>
+          <li>Oddawanie: eksport do PNG/SVG + krótkie uzasadnienie kroków.</li>
+        </ul>
+      </section>
+
+      <!-- STOPKA / ŹRÓDŁA -->
+      <section>
+        <h2>Źródła i dalsza lektura</h2>
+        <ul class="small">
+          <li>Definicje i wprowadzenie: Encyklopedia Britannica; CLRS "Introduction to Algorithms".</li>
+          <li>Ćwiczenia ze schematami: <a href="https://app.diagrams.net/" target="_blank" rel="noreferrer noopener">app.diagrams.net</a>.</li>
+        </ul>
+        <p class="muted small">Tip: dodaj do adresu <code>?print-pdf</code> aby ładnie wydrukować do PDF.</p>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Skrypty Reveal + pluginy -->
+  <script src="https://unpkg.com/reveal.js@5/dist/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/markdown/markdown.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/highlight/highlight.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/zoom/zoom.js"></script>
+
+  <script>
+    const deck = new Reveal({
+      hash: true,
+      slideNumber: true,
+      transition: 'slide',
+      controls: true,
+      progress: true,
+      center: true,
+    });
+    deck.initialize({ plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealZoom ] });
+  </script>
+</body>
+</html>
