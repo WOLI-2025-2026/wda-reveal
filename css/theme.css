@@ -1,4 +1,4 @@
-:root {
+:root{
   --r-main-font: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", "Helvetica Neue", sans-serif;
   --r-heading-font: var(--r-main-font);
   --r-main-color: #eaeaea;
@@ -7,27 +7,10 @@
   --r-link-color-hover: #b3ecff;
   --r-selection-background-color: #4a90e2;
 }
-
-.reveal h1, .reveal h2, .reveal h3 {
-  letter-spacing: .02em;
-  font-weight: 700;
-}
-
-.reveal p, .reveal li {
-  line-height: 1.5;
-}
-
-.reveal .slides {
-  font-size: 30px; /* globalny rozmiar tekstu */
-}
-
-.reveal .r-stretch img {
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.35);
-}
-
-.reveal .slide-number {
-  background: rgba(0,0,0,.4);
-  padding: .25em .5em;
-  border-radius: 8px;
-}
+.reveal .slides{ font-size:30px }
+.badge{ display:inline-block; padding:.15em .5em; border-radius:.6em; background:#1e293b; font-size:.6em; vertical-align:middle }
+.ok{ color:#abf7b1 } .warn{ color:#ffd37a } .danger{ color:#ff9a9a }
+.grid-cols{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.2rem }
+.muted{ opacity:.8 } .box{ background:rgba(255,255,255,.04); padding:1rem 1.2rem; border-radius:12px; }
+svg.flow{ max-width:100%; height:auto } .small{ font-size:.8em }
+.reveal .slide-number { background: rgba(0,0,0,.4); padding:.25em .5em; border-radius:8px; }
