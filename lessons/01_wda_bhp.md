@@ -4,35 +4,23 @@
 --
 
 ## Zasady BHP w czasie zajęć
-<div class="grid-cols">
-<div class="box">
 
-### Sala komputerowa
-- Pracujemy **na wyznaczonych stanowiskach**.  
-- Utrzymujemy porządek przy stanowisku.  
-- Przewody zasilające <span class="warn">nie mogą</span> leżeć na przejściach.
+- **Sala komputerowa**  
+  - Pracujemy na wyznaczonych stanowiskach.  
+  - Utrzymujemy porządek przy stanowisku.  
+  - Przewody zasilające **nie mogą** leżeć na przejściach.
 
-</div>
-<div class="box">
+- **Jedzenie i picie**  
+  - Picie poza stanowiskami roboczymi, jedzenie niewskazane w czasie zajęć.
+  - Nic płynnego przy klawiaturze/komputerze.
 
-### Jedzenie i picie
-- **Poza stanowiskami roboczymi** – napoje i jedzenie w wyznaczonym miejscu.  
-- Nic płynnego przy klawiaturze/komputerze.
+- **Wyjścia do toalety**  
+  - Informujemy prowadzącego, że wychodzimy – *nie pytamy* (krótki komunikat wystarczy).
 
-</div>
-<div class="box">
+- **Elektryka**  
+  - Uważamy przy **podłączaniu/odłączaniu** urządzeń – grozi porażeniem.  
+  - W razie porażenia <span class="danger">nie dotykamy</span> osoby gołymi rękami – używamy **izolatora** (np. drewno/plastik).
 
-### Wyjścia do toalety
-- **Informujemy** prowadzącego, że wychodzimy – _nie pytamy_ (krótki komunikat wystarczy).
-
-</div>
-<div class="box">
-
-### Elektryka
-- Uważamy przy **podłączaniu/odłączaniu** urządzeń – grozi porażeniem.  
-- W razie porażenia <span class="danger">nie dotykamy</span> osoby gołymi rękami – używamy **izolatora** (np. drewno/plastik).
-
-</div>
 </div>
 
 --
@@ -96,23 +84,49 @@ Implementacja w języku programowania (np. C++).
 
 ## Schematy blokowe — podstawowe bloki
 <div class="grid-cols">
-<div class="box">
 
-- **Start/Stop** — owal.  
-- **Wejście/Wyjście** — równoległobok.  
-- **Przetwarzanie** — prostokąt.  
-- **Decyzja** — romb (tak/nie).
+<div class="box" style="text-align:center">
 
-</div>
-<div class="box">
-
-- **Łącznik** — małe kółko/znacznik.  
-- **Proces wstępnie zdef.** — podproces.  
-- **Dokument** — wygięty prostokąt.  
-- **Strzałki** — kierunek przepływu.
+### Start / Stop  
+<svg width="160" height="80">
+  <ellipse cx="80" cy="40" rx="70" ry="30" fill="#121317" stroke="#5f6b7a" stroke-width="2"/>
+  <text x="80" y="45" text-anchor="middle" fill="#eaeaea" font-size="18" font-family="sans-serif">Start</text>
+</svg>
 
 </div>
+
+<div class="box" style="text-align:center">
+
+### Wejście / Wyjście  
+<svg width="160" height="80">
+  <polygon points="20,20 140,20 120,60 0,60" fill="#121317" stroke="#5f6b7a" stroke-width="2"/>
+  <text x="80" y="45" text-anchor="middle" fill="#eaeaea" font-size="16" font-family="sans-serif">Dane</text>
+</svg>
+
 </div>
+
+<div class="box" style="text-align:center">
+
+### Przetwarzanie  
+<svg width="160" height="80">
+  <rect x="20" y="20" width="120" height="40" rx="6" ry="6" fill="#121317" stroke="#5f6b7a" stroke-width="2"/>
+  <text x="80" y="45" text-anchor="middle" fill="#eaeaea" font-size="16" font-family="sans-serif">Oblicz</text>
+</svg>
+
+</div>
+
+<div class="box" style="text-align:center">
+
+### Decyzja  
+<svg width="160" height="80">
+  <polygon points="80,10 150,40 80,70 10,40" fill="#121317" stroke="#5f6b7a" stroke-width="2"/>
+  <text x="80" y="45" text-anchor="middle" fill="#eaeaea" font-size="16" font-family="sans-serif">Tak/Nie?</text>
+</svg>
+
+</div>
+
+</div>
+
 
 --
 
@@ -122,74 +136,55 @@ Implementacja w języku programowania (np. C++).
 
 ### Lista kroków
 1. Wczytaj liczbę `n`.  
-2. Jeśli `n % 2 == 0` → wypisz „parzysta”.  
-3. W przeciwnym razie wypisz „nieparzysta”.  
+2. Jeśli `n % 2 == 0` → powiększ o 1 i wypisz „parzysta”.  
+3. W przeciwnym pomniejsz o 1 razie wypisz „nieparzysta”.  
 4. Zakończ.
 
 </div>
 <div class="box">
 
 ### Schemat blokowy (SVG)
-<!-- surowe HTML jest dozwolone w Markdown Reveal -->
-<svg class="flow" viewBox="0 0 820 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schemat blokowy: sprawdzanie parzystości">
-  <defs>
-    <style>
-      .blk{ fill:#121317; stroke:#5f6b7a; stroke-width:2; rx:16; ry:16 }
-      .txt{ fill:#eaeaea; font-family: Inter, Arial, sans-serif; font-size:20px }
-      .edge{ stroke:#8aa3bf; stroke-width:2; fill:none; marker-end:url(#arr) }
-      .par{ font-weight:700; fill:#abf7b1 }
-      .nie{ font-weight:700; fill:#ffb3b3 }
-    </style>
-    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8aa3bf"/>
-    </marker>
-  </defs>
-  <ellipse cx="410" cy="50" rx="90" ry="30" stroke="#5f6b7a" stroke-width="2" fill="#121317"/>
-  <text x="410" y="55" text-anchor="middle" class="txt">Start</text>
-  <polygon points="300,120 520,120 560,160 260,160" stroke="#5f6b7a" stroke-width="2" fill="#121317"/>
-  <text x="410" y="148" text-anchor="middle" class="txt">Wczytaj n</text>
-  <polygon points="410,200 540,260 410,320 280,260" stroke="#5f6b7a" stroke-width="2" fill="#121317"/>
-  <text x="410" y="265" text-anchor="middle" class="txt">n % 2 == 0?</text>
-  <rect x="90" y="380" width="260" height="60" class="blk"/>
-  <text x="220" y="415" text-anchor="middle" class="txt par">Wypisz: parzysta</text>
-  <rect x="470" y="380" width="260" height="60" class="blk"/>
-  <text x="600" y="415" text-anchor="middle" class="txt nie">Wypisz: nieparzysta</text>
-  <ellipse cx="410" cy="490" rx="90" ry="30" stroke="#5f6b7a" stroke-width="2" fill="#121317"/>
-  <text x="410" y="495" text-anchor="middle" class="txt">Stop</text>
-  <path d="M410,80 L410,120" class="edge"/>
-  <path d="M410,160 L410,200" class="edge"/>
-  <path d="M280,260 C240,260 220,300 220,380" class="edge"/>
-  <path d="M540,260 C580,260 600,300 600,380" class="edge"/>
-  <path d="M220,440 C220,470 320,490 410,490" class="edge"/>
-  <path d="M600,440 C600,470 500,490 410,490" class="edge"/>
-</svg>
+![Schemat blokowy](media/schemat1.png)
 
-</div>
-</div>
 
 --
 
-## Złożoność algorytmów
-<div class="grid-cols">
-<div class="box">
+## Zadanie 1
+Narysuj schemat blokowy, który:
+ - wczytuje dwie liczby,
+ - oblicza ich sumę i różnicę,
+ - wypisuje wyniki. 
 
-### Czas (Big-O)
-- `O(1)` — stały.  
-- `O(log n)` — logarytmiczny.  
-- `O(n)` — liniowy.  
-- `O(n log n)` — np. sortowania szybkie/merge.  
-- `O(n²)`, `O(2^n)` — kosztowne.
+--
 
-</div>
-<div class="box">
+## Zadanie 2
+Narysuj schemat blokowy, który:
+ - wczytuje dwie liczby,
+ - wyświetla więszką z nich.
 
-### Pamięć
-- Dodatkowa pamięć (np. tablice pomocnicze).  
-- Rekurencja → stos wywołań.  
-- W praktyce: kompromis czas ⟷ pamięć.
+--
 
-</div>
-</div>
+## Zadanie 2.1
+Narysuj schemat blokowy, który:
+ - wczytuje trzy liczby,
+ - wyświetla największą z nich.
+
+--
+
+## Zadanie 2.2
+Narysuj schemat blokowy, który:
+ - wczytuje `n` liczb,
+ - wyświetla największą z nich.
+
+--
+
+## Zadanie 3
+
+Narysuj schemat blokowy, który:
+- wczytuje `n` liczb,  
+- wyświetla największą z nich.
+
+https://pl.wikipedia.org/wiki/Ci%C4%85g_Fibonacciego
 
 --
 
