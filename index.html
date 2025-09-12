@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <title>Moja Prezentacja — Reveal.js</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+  <!-- Reveal.js CSS z CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/theme/black.css" id="reveal-theme">
+
+  <!-- Podświetlanie składni -->
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@11.9.0/styles/github.min.css">
+
+  <!-- Twój własny motyw (nadpisuje wybrane style) -->
+  <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <!-- PRZYKŁADOWE SLAJDY W HTML -->
+      <section data-background-gradient="linear-gradient(135deg, #111 0%, #333 100%)">
+        <h1>Moja Prezentacja</h1>
+        <p style="opacity:.8">Reveal.js + GitHub Pages</p>
+        <p class="fragment">Klikaj strzałkami ← →, w dół dla „podslajdów”.</p>
+        <aside class="notes">
+          Notatki prelegenta — widoczne w trybie „S” (speaker notes).
+        </aside>
+      </section>
+
+      <section>
+        <h2>Agenda</h2>
+        <ol>
+          <li class="fragment">Cel</li>
+          <li class="fragment">Dane / demo</li>
+          <li class="fragment">Wnioski</li>
+        </ol>
+      </section>
+
+      <!-- PRZYKŁAD PODSLAJDÓW (VERTICAL STACK) -->
+      <section>
+        <section>
+          <h2>Blok tematyczny</h2>
+          <p>To jest slajd poziomy.</p>
+        </section>
+        <section>
+          <h3>Podslajd</h3>
+          <pre><code class="language-js">
+// kod z podświetlaniem
+function hello(name) { return `Cześć, ${name}!`; }
+console.log(hello("Świecie"));
+          </code></pre>
+        </section>
+      </section>
+
+      <!-- SLAJD Z TŁEM -->
+      <section data-background-image="media/obrazek.png" data-background-opacity="0.2">
+        <h2>Slajd z tłem</h2>
+        <p>Dowolny obraz w /media.</p>
+      </section>
+
+      <!-- SLAJDY Z MARKDOWN (opcjonalnie) -->
+      <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-charset="utf-8">
+<textarea data-template>
+# Slajdy w Markdown
+
+- Edytuj szybciej treść
+- Nagłówki `#` → nowe slajdy
+- Fragmenty: <!-- .element: class="fragment" -->
+
+--
+
+## Podslajd w Markdown
+
+Kod:
+
+```bash
+echo "Hello Reveal"
