@@ -82,6 +82,23 @@ Implementacja w języku programowania (np. C++).
 
 --
 
+## Zmienne w schematach blokowych
+
+- **Zmienne** to symbole (np. `x`, `n`, `suma`), które przechowują dane wykorzystywane w algorytmie.  
+- W schematach blokowych zmienne pojawiają się w:
+  - **blokach wejścia/wyjścia** – np. *Wczytaj `n`*, *Wypisz `suma`*,
+  - **blokach przetwarzania** – np. *suma = suma + n*, *i = i + 1*,
+  - **blokach decyzyjnych** – np. *czy `n > 0`?*.
+
+--
+
+### Zasady użycia zmiennych
+
+- Nadajemy zmiennym **jasne nazwy**, które wskazują ich rolę (np. `max`, `licznik`).  
+- W bloku **przetwarzania** zapisujemy operacje arytmetyczne lub przypisania.
+
+--
+
 ## Schematy blokowe — podstawowe bloki
 <div class="grid-cols">
 
@@ -188,15 +205,80 @@ https://pl.wikipedia.org/wiki/Ci%C4%85g_Fibonacciego
 
 --
 
-## Realizacja w języku C++
-```cpp
-#include <iostream>
-using namespace std;
+## Zmienne tablicowe (tablice) w schematach blokowych
 
-int main(){
-  long long n; cout << "Podaj n: ";
-  if(!(cin >> n)) return 0;
-  if(n % 2 == 0) cout << "parzysta\n";
-  else           cout << "nieparzysta\n";
-  return 0;
-}
+- **Tablica** to zmienna złożona, która przechowuje wiele wartości tego samego typu.  
+- Dostęp do elementu tablicy następuje przez **indeks**:  
+  - np. `A[0]`, `A[1]`, …, `A[n-1]`.  
+- W schematach blokowych tablice pojawiają się głównie w:
+  - **blokach wejścia** – np. *Wczytaj A[ i ]* w pętli,  
+  - **blokach przetwarzania** – np. *suma = suma + A[ i ]*,  
+  - **blokach decyzyjnych** – np. *czy A[ i ] > max ?*.
+
+--
+
+## Zadanie 4
+
+Narysuj schemat blokowy, który:
+- wczytuje `n` liczb,  
+- liczy średnią arytmetyczną podanych liczb.
+
+--
+
+## Zadanie 4.1
+
+Narysuj schemat blokowy, który:
+- wczytuje `n` liczb,  
+- liczy średnią arytmetyczną podanych liczb.
+
+UWAGA ! Nie bez korzystania z tablicy.
+
+--
+
+## Zadanie 5
+
+Narysuj schemat blokowy, który:
+- wczytuje `n` liczb i zapisuje je w tablicy,
+- sortuje tablicę zgodnie algorytmem sortowania bąbelkowego.
+
+https://pl.wikipedia.org/wiki/Sortowanie_b%C4%85belkowe
+
+--
+
+## Złożoność algorytmów
+
+- **Złożoność czasowa** – jak liczba operacji (czas wykonania) rośnie wraz ze wzrostem rozmiaru danych wejściowych `n`.  
+- **Złożoność pamięciowa** – jak dużo pamięci potrzebuje algorytm w zależności od `n`.
+
+--
+
+### Notacja O(n)
+
+- **Duże O** (np. `O(n)`) opisuje *górne ograniczenie* – czyli jak szybko rośnie czas/pamięć w **najgorszym przypadku**.  
+- Przykłady:
+  - `O(1)` – czas stały, niezależny od danych,  
+  - `O(n)` – czas liniowy, proporcjonalny do rozmiaru danych,  
+  - `O(n²)` – czas kwadratowy, rośnie szybko przy dużych `n`.
+
+--
+
+### Notacja o(n)
+
+- **Małe o(n)** opisuje *ściśle mniejsze tempo wzrostu* niż `n`.  
+- Znaczenie: `f(n) = o(n)` oznacza, że `f(n)` rośnie wolniej niż liniowo.  
+- Przykład:  
+  - `f(n) = log(n)` → `f(n) = o(n)`, bo `log(n)/n → 0` dla dużego `n`.
+
+--
+
+### Przykłady notacji
+
+- `O(1)` – dostęp do elementu tablicy.  
+- `O(n)` – przeszukiwanie liniowe.  
+- `O(n log n)` – szybkie sortowanie, mergesort.  
+- `O(n²)` – sortowanie bąbelkowe, sortowanie przez wstawianie.  
+- `O(2^n)` – przeszukiwanie wszystkich podzbiorów.  
+- `O(n!)` – pełna permutacja elementów.
+
+
+
