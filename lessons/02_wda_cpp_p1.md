@@ -257,7 +257,11 @@ Operatory arytmetyczne służą do wykonywania operacji matematycznych na zmienn
 * L-wyrażeniem w praktyce będzie u nas **zmienna**, do której można zapisać wartość.
 * P-wyrażeniem może być dowolne wyrażenie dające wynik: zmienna, stała, działanie arytmetyczne, wynik funkcji, a także ich kombinacje.
 
+--
+
 W C++ (tak jak w C) istnieją także **złożone operatory przypisania** (np. `+=`, `-=`, …), które od razu wykonują działanie i zapisują wynik do tej samej zmiennej. Operator przypisania ma **wiążenie prawostronne** (right-associative): najpierw obliczane jest wyrażenie po prawej stronie, a dopiero potem wykonywane jest przypisanie.
+
+--
 
 *Przykład (2.0) Wykonanie przypisania (C++):*
 
@@ -326,6 +330,8 @@ int main() {
 > a/b=2
 > a%b=0
 
+--
+
 Aby wykonać działanie arytmetyczne, umieszczamy je po prawej stronie `=`. W jednym wyrażeniu można mieć kilka operatorów — **priorytet** i **wiążenie lewostronne** (dla `+ - * / %`) decydują o kolejności, a **nawiasy** pozwalają tę kolejność zmienić.
 
 *Przykład (2.2) Operacje wieloargumentowe i nawiasy (C++):*
@@ -384,6 +390,8 @@ int main() {
 
 > 10/4=2
 
+--
+
 ```cpp
 // Dzielenie zmiennoprzecinkowe
 #include <iostream>
@@ -411,6 +419,8 @@ int main() {
 
 * **Konwersja jawna** — sami wskazujemy typ.
 * **Konwersja niejawna** — kompilator dobierze typ pośredni tak, aby nie tracić informacji (np. w wyrażeniu mieszanym `int` i `float` wartości całkowite zostaną rozszerzone do `float`).
+
+--
 
 *Przykład (2.4) Konwersja jawna:*
 
@@ -502,6 +512,8 @@ int main() {
 > a=3
 > b=3
 
+--
+
 ```cpp
 // Postinkrementacja
 #include <iostream>
@@ -539,6 +551,8 @@ int main() {
     return 0; 
 }
 ```
+
+--
 
 *Przykład (2.8) Iloczyn i formatowanie wyświetlania:*
 
@@ -620,7 +634,7 @@ W miejscu oznaczonym jako *warunek* podajemy wyrażenie logiczne lub zmienną. B
 | Oznaczenie | Działanie        | Przykład użycia                                  |                  |            |   |                                |
 | :------: | :---------- | :-------------------------------- | ----------- | ------- | - | -------------------- |
 |    `&&`    | Koniunkcja (AND) | `if(a == b && b < 10) // jeżeli a==b oraz b<10`  |                  |            |   |                                |
-|     \`     |                  | \`                                               | Alternatywa (OR) | \`if(a > b |   | a < 0) // jeżeli a>b lub a<0\` |
+|     \|\|   | Alternatywa (OR) | `if(a > b \|\| a < 0) // jeżeli a>b lub a<0` |
 |     `!`    | Negacja (NOT)    | `if(!(a < b)) // jeżeli nie jest prawdą, że a<b` |                  |            |   |                                |
 
 Wynikiem każdej operacji logicznej jest wartość: **różna od 0**, gdy warunek spełniony, lub **0**, gdy niespełniony.
