@@ -14,3 +14,8 @@
 .muted{ opacity:.8 } .box{ background:rgba(255,255,255,.04); padding:1rem 1.2rem; border-radius:12px; }
 svg.flow{ max-width:100%; height:auto } .small{ font-size:.8em }
 .reveal .slide-number { background: rgba(0,0,0,.4); padding:.25em .5em; border-radius:8px; }
+
+.reveal section img.small-img {
+  max-width: 60%;
+  height: auto;
+}

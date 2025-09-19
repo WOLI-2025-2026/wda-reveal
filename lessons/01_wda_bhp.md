@@ -243,42 +243,6 @@ Narysuj schemat blokowy, który:
 
 https://pl.wikipedia.org/wiki/Sortowanie_b%C4%85belkowe
 
---
-
-## Złożoność algorytmów
-
-- **Złożoność czasowa** – jak liczba operacji (czas wykonania) rośnie wraz ze wzrostem rozmiaru danych wejściowych `n`.  
-- **Złożoność pamięciowa** – jak dużo pamięci potrzebuje algorytm w zależności od `n`.
-
---
-
-### Notacja O(n)
-
-- **Duże O** (np. `O(n)`) opisuje *górne ograniczenie* – czyli jak szybko rośnie czas/pamięć w **najgorszym przypadku**.  
-- Przykłady:
-  - `O(1)` – czas stały, niezależny od danych,  
-  - `O(n)` – czas liniowy, proporcjonalny do rozmiaru danych,  
-  - `O(n²)` – czas kwadratowy, rośnie szybko przy dużych `n`.
-
---
-
-### Notacja o(n)
-
-- **Małe o(n)** opisuje *ściśle mniejsze tempo wzrostu* niż `n`.  
-- Znaczenie: `f(n) = o(n)` oznacza, że `f(n)` rośnie wolniej niż liniowo.  
-- Przykład:  
-  - `f(n) = log(n)` → `f(n) = o(n)`, bo `log(n)/n → 0` dla dużego `n`.
-
---
-
-### Przykłady notacji
-
-- `O(1)` – dostęp do elementu tablicy.  
-- `O(n)` – przeszukiwanie liniowe.  
-- `O(n log n)` – szybkie sortowanie, mergesort.  
-- `O(n²)` – sortowanie bąbelkowe, sortowanie przez wstawianie.  
-- `O(2^n)` – przeszukiwanie wszystkich podzbiorów.  
-- `O(n!)` – pełna permutacja elementów.
 
 
 
