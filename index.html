@@ -5,6 +5,7 @@
   <title>WDA — Algorytmy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <!-- Reveal.js CSS z CDN -->
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/reveal.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@5/dist/theme/black.css" id="reveal-theme">
@@ -79,6 +80,7 @@ $" data-charset="utf-8"></section>
   <script src="https://unpkg.com/reveal.js@5/plugin/notes/notes.js"></script>
   <script src="https://unpkg.com/reveal.js@5/plugin/search/search.js"></script>
   <script src="https://unpkg.com/reveal.js@5/plugin/zoom/zoom.js"></script>
+  <script src="https://unpkg.com/reveal.js@5/plugin/math/math.js"></script>
 
   <script>
     const deck = new Reveal({
@@ -89,7 +91,8 @@ $" data-charset="utf-8"></section>
       progress: true,
       center: true,
     });
-    deck.initialize({ plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealZoom ] });
-  </script>
+  deck.initialize({
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealZoom, RevealMath.KaTeX ]
+  });  </script>
 </body>
 </html>
