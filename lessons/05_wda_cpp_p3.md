@@ -201,3 +201,162 @@ tablica[4] = 5
 6. Napisz program, który wczyta od użytkownika tablicę 10-elementową, a następnie posortuje ją algorytmem [quick sort](https://pl.m.wikipedia.org/wiki/Sortowanie_szybkie). Stwórz funkcję `quick_sort()`.
 
 
+--
+
+# Łańcuchy znaków i ASCII w C++
+
+## ASCII – tabela znaków
+
+Każdy znak w komputerze ma przypisany **kod liczbowy** (ASCII – American Standard Code for Information Interchange).
+W uproszczeniu:
+
+* `0–31` → znaki sterujące (np. `\n` – nowa linia, `\t` – tabulator),
+* `32` → spacja `' '`,
+* `48–57` → cyfry `'0'..'9'`,
+* `65–90` → litery wielkie `'A'..'Z'`,
+* `97–122` → litery małe `'a'..'z'`.
+
+--
+
+![ASCII](https://e7.pngegg.com/pngimages/250/319/png-clipart-ascii-character-encoding-value-binary-code-miscellaneous-angle.png)
+
+--
+
+**Przykład: wypisywanie znaków ASCII z kodami**
+
+```cpp
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main() {
+    for (int i = 32; i < 128; i++) {
+        cout << setw(3) << i << " = " << static_cast<char>(i) << '\n';
+    }
+    return 0;
+}
+```
+
+--
+
+*Fragment wyniku:*
+
+```
+ 32 =  
+ 33 = !
+ 34 = "
+ ...
+ 65 = A
+ 66 = B
+ ...
+ 97 = a
+ 98 = b
+ ...
+```
+
+--
+
+## Typ `std::string`
+
+W C++ do pracy z tekstem używamy klasy **`std::string`** z biblioteki `<string>`.
+To wygodniejsza i bezpieczniejsza reprezentacja łańcucha niż tablice znaków.
+
+--
+
+### Tworzenie i podstawowe operacje
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string s1 = "Hello";
+    string s2 = "World";
+
+    cout << s1 + " " + s2 << '\n';   // konkatenacja
+    cout << s1.size() << '\n';       // długość napisu
+    cout << s1[0] << '\n';           // dostęp do pojedynczego znaku
+}
+```
+
+-- 
+
+### Wczytywanie tekstu
+
+```cpp
+string s;
+cin >> s;            // czyta jedno słowo (do spacji)
+getline(cin, s);     // czyta całą linię
+```
+
+--
+
+## Najważniejsze metody `std::string`
+
+| Operacja            | Przykład                 | Wynik                      |
+| ------------------- | ------------------------ | -------------------------- |
+| Długość             | `s.size()`               | `5` dla `"Hello"`          |
+| Konkatenacja        | `s1 + s2`                | `"HelloWorld"`             |
+| Dodanie znaku       | `s.push_back('!')`       | `"Hello!"`                 |
+| Dostęp do znaku     | `s[1]`                   | `'e'`                      |
+| Porównanie          | `if(s1 == s2)`           | true/false                 |
+| Wyszukiwanie        | `s.find("lo")`           | 3                          |
+| Wycinek (substring) | `s.substr(1, 3)`         | `"ell"`                    |
+| Usuwanie            | `s.erase(2, 2)`          | usuwa 2 znaki od indeksu 2 |
+| Wstawianie          | `s.insert(1, "ABC")`     | `"HABCello"`               |
+| Zamiana fragmentu   | `s.replace(1, 3, "XYZ")` | `"HXYZo"`                  |
+
+--
+
+## Funkcje pomocnicze na znakach (`<cctype>`)
+
+Do pracy z pojedynczymi znakami:
+
+* `isalpha(ch)` – litera?
+* `isdigit(ch)` – cyfra?
+* `isspace(ch)` – biały znak?
+* `toupper(ch)` – zmiana na wielką literę,
+* `tolower(ch)` – zmiana na małą literę.
+
+
+--
+
+*Przykład: zamiana na wielkie litery i liczenie cyfr*
+
+```cpp
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+int main() {
+    string s;
+    getline(cin, s);
+
+    int digits = 0;
+    for (char& ch : s) {
+        if (isdigit((unsigned char)ch)) digits++;
+        ch = toupper((unsigned char)ch);
+    }
+    cout << "WIELKIMI: " << s << "\n";
+    cout << "Liczba cyfr: " << digits << "\n";
+}
+```
+
+--
+
+## Zadania do samodzielnego wykonania
+
+1. Wypisz wszystkie znaki ASCII od 32 do 126 wraz z ich kodami.
+2. Napisz program, który wczytuje łańcuch i:
+
+   * wypisuje jego długość,
+   * wypisuje pierwszy i ostatni znak,
+   * sprawdza, czy zawiera cyfrę.
+3. Napisz funkcję, która odwraca łańcuch (np. `"Ala"` → `"alA"`).
+4. Napisz program, który zamienia wszystkie litery na małe i usuwa spacje.
+5. Napisz program, który sprawdza, czy podane słowo jest **palindromem** (czytane od końca daje ten sam napis).
+6. Napisz program zliczający liczbę poszczególnych liter w ciągu znaków podanym przez użytkownika. Program wyświetla liczbę wystąpień znaków które przynajmniej raz wystąpiły w podanym tekście.
+
+

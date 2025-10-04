@@ -110,7 +110,10 @@ $" data-charset="utf-8"></section>
       center: true,
     });
   deck.initialize({
-    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealZoom, RevealMath.KaTeX ]
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealSearch, RevealZoom, RevealMath.KaTeX ],
+    markdown: {
+      fetchOptions: { cache: 'no-store' }   // <— kluczowe na dev
+    }
   });  </script>
 </body>
 </html>
