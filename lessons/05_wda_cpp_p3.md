@@ -350,7 +350,6 @@ int main() {
 
 1. Wypisz wszystkie znaki ASCII od 32 do 126 wraz z ich kodami.
 2. Napisz program, który wczytuje łańcuch i:
-
    * wypisuje jego długość,
    * wypisuje pierwszy i ostatni znak,
    * sprawdza, czy zawiera cyfrę.
