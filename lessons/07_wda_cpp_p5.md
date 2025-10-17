@@ -122,6 +122,7 @@ W pamięci tablice wielowymiarowe leżą **ciągiem** (wiersz po wierszu). Może
 *Przykład (12.3) przejście po tablicy 2D wskaźnikiem (C++):*
 
 ```cpp
+
 #include <iostream>
 using namespace std;
 
