@@ -366,6 +366,8 @@ int main()
     return 0;
 }
 
+```
+
 --
 
 > Uwaga: w C++ można też pisać funkcje z nagłówkiem `void f(int a[][3])` dla znanego drugiego wymiaru, albo używać `std::array`/`std::vector`. Tu zostajemy przy surowych tablicach, by skupić się na sposobach przekazywania parametrów.
