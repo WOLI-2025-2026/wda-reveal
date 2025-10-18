@@ -129,7 +129,7 @@ using namespace std;
 constexpr int N = 3;
 
 int main() {
-    int array[N][N] = {{1,2,3},{4,5,6},{7,8,9}};
+    int array[N][N] = /{/{1,2,3/},/{4,5,6/},/{7,8,9/}/};
 
     int* ptr  = &array[0][0];
     int* pend = &array[N-1][N-1];
