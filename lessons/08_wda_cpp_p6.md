@@ -1,25 +1,16 @@
-# 💻 Lekcja: Dynamiczne alokowanie pamięci w C++
+# Dynamiczne alokowanie pamięci w C++
 
 --
 
-## 🎯 Cele lekcji
-Po tej lekcji będziesz potrafić:
-- wyjaśnić, czym jest dynamiczna alokacja pamięci,
-- tworzyć i usuwać zmienne oraz tablice dynamiczne,
-- wykorzystywać wskaźniki w zarządzaniu pamięcią,
-- korzystać z kontenera `std::vector` do dynamicznego przechowywania danych.
+## 1. Pamięć statyczna a dynamiczna
 
---
-
-## 🧩 1. Pamięć statyczna a dynamiczna
-
-### 📘 Statyczna alokacja
+### Statyczna alokacja
 Zmienna istnieje tylko w zakresie, w którym została zdefiniowana.
 ```cpp
 int x = 10;  // statyczna alokacja
 ```
 
-### 📘 Dynamiczna alokacja
+### Dynamiczna alokacja
 Tworzy zmienne w czasie działania programu.
 ```cpp
 int *p = new int;  // dynamiczna alokacja
@@ -38,9 +29,8 @@ Utwórz program, który:
 
 --
 
-## ⚙️ 2. Dynamiczne tablice
+## 2. Dynamiczne tablice
 
-### 📗 Przykład
 ```cpp
 #include <iostream>
 using namespace std;
@@ -61,13 +51,15 @@ int main() {
 }
 ```
 
-### 💡 Wyjaśnienie
+--
+
+### Wyjaśnienie
 `new int[n]` przydziela tablicę o rozmiarze `n`.  
 `delete[] tab` zwalnia całą tablicę.
 
 --
 
-### 🧠 Zadanie 2
+### Zadanie 2
 Napisz program, który:
 - tworzy tablicę `n` liczb całkowitych,
 - wczytuje wartości od użytkownika,
@@ -77,16 +69,16 @@ Napisz program, który:
 
 --
 
-## ⚙️ 3. Wskaźniki i dynamiczna pamięć
+## 3. Wskaźniki i dynamiczna pamięć
 
-### 📗 Przykład
+### Przykład
 ```cpp
 int *p = new int(10);
 cout << "Adres: " << p << ", wartość: " << *p << endl;
 delete p;
 ```
 
-### 💡 Uwaga
+### Uwaga
 Nie wolno odwoływać się do wskaźników po `delete`!
 ```cpp
 int *p = new int(5);
@@ -97,7 +89,7 @@ cout << *q; // ❌ niezdefiniowane zachowanie
 
 --
 
-### 🧠 Zadanie 3
+### Zadanie 3
 1. Utwórz dynamiczną tablicę 10 elementów.  
 2. Utwórz wskaźnik wskazujący na środkowy element.  
 3. Wyświetl jego wartość i adres.  
@@ -105,9 +97,9 @@ cout << *q; // ❌ niezdefiniowane zachowanie
 
 --
 
-## ⚙️ 4. Kontener `std::vector` — dynamiczna tablica
+## 4. Kontener `std::vector` — dynamiczna tablica
 
-### 📗 Przykład użycia
+### Przykład użycia
 ```cpp
 #include <iostream>
 #include <vector>
@@ -127,12 +119,12 @@ int main() {
 }
 ```
 
-### 💡 Wektory automatycznie zarządzają pamięcią!
+### Wektory automatycznie zarządzają pamięcią!
 Nie musisz używać `new` ani `delete`.
 
 --
 
-### 🧠 Zadanie 4
+### Zadanie 4
 1. Napisz program, który:
    - tworzy wektor `int`,  
    - pozwala dodać nową liczbę,  
@@ -141,7 +133,7 @@ Nie musisz używać `new` ani `delete`.
 
 --
 
-## 🧾 Podsumowanie
+## Podsumowanie
 
 | Pojęcie | Opis |
 |----------|------|
@@ -152,9 +144,7 @@ Nie musisz używać `new` ani `delete`.
 
 --
 
-## 🧩 Zadanie końcowe
-Stwórz program, który:
-- wczytuje dowolną liczbę ocen uczniów do `std::vector<double>`,
-- umożliwia dodawanie i usuwanie ocen,
-- oblicza średnią i sortuje oceny,
-- kończy działanie po wpisaniu `exit`.
+## Zadanie końcowe
+Stwórz program podzielony na funkcje, który:
+- wczytuje dowolną liczbę ocen uczniów do tablicy.
+- 
